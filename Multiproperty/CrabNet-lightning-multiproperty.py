@@ -374,11 +374,11 @@ def main():
 
 if __name__=='__main__':
 
-    wandb.login(key='b11d318e434d456c201ef1d3c86a3c1ce31b98d7')
+    wandb.login(key='API_key')
 
     print('Loading the data...')  
 
-    path='/Users/elenapatyukova/Documents/GitHub/Disorder-prediction/Multiproperty/'
+    path=''
 
     config={'train_path': path+'data/materials_data/all_properties/train_total.csv',
             'val_path': path+'data/materials_data/all_properties/val_total.csv',
@@ -451,20 +451,3 @@ if __name__=='__main__':
 
 
     wandb.finish()
-    # print('Start sweeping with different parameters for RF...')
-
-    # wandb.login(key='b11d318e434d456c201ef1d3c86a3c1ce31b98d7')
-
-    # sweep_config = {
-    # 'method': 'random',
-    # 'parameters': {'n_estimators': {'values': [50, 100, 150, 200]},
-    #                'class_weight': {'values':['balanced', 'balanced_subsample']},
-    #                'criterion': {'values': ['gini', 'entropy', 'log_loss']}
-    # }
-    # }
-
-    # sweep_id = wandb.sweep(sweep=sweep_config, project="RF-disorder-prediction-global-disorder")
-
-    # wandb.agent(sweep_id, function=main, count=10)
-
-    # wandb.finish()
